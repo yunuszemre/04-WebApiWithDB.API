@@ -19,6 +19,6 @@ namespace _04_WebApiWithDB.Repositories.Abstract
 
         Employee UpdateEmployee(Employee employee);
 
-        Employee DeleteEmployee(int id);    
+        Employee DeleteEmployee(int id);
     }
 }

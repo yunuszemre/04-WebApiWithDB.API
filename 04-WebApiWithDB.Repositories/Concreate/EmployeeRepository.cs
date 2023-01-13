@@ -16,6 +16,21 @@ namespace _04_WebApiWithDB.Repositories.Concreate
         {
             _context = context;
         }
+        public List<Employee> GeEmployeeByDepartment(string department)
+        {
+            
+            return _context.Employees.Where(t0 => t0.Department == department).ToList();
+        }
+
+        public List<Employee> GetAllEmpleyees()
+        {
+           return _context.Employees.ToList();
+        }
+
+        public async Task<Employee> GetEmployeeById(int id)
+        {
+            return await _context.Employees.FindAsync(id);
+        }
         public Employee CreateEmployee(Employee employee)
         {
             _context.Add(employee);
@@ -25,23 +40,12 @@ namespace _04_WebApiWithDB.Repositories.Concreate
 
         public Employee DeleteEmployee(int id)
         {
-            throw new NotImplementedException();
+            var deletedUser = _context.Employees.FirstOrDefault(t0 => t0.Id == id);
+            _context.Remove(deletedUser);
+            return deletedUser;
         }
 
-        public List<Employee> GeEmployeeByDepartment(string department)
-        {
-            
-        }
-
-        public List<Employee> GetAllEmpleyees()
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<Employee> GetEmployeeById(int id)
-        {
-            return await _context.FindAsync();
-        }
+        
 
         public Employee UpdateEmployee(Employee employee)
         {

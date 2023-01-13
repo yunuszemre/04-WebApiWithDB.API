@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using _04_WebApiWithDB.Entities.Concreate;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace _04_WebApiWithDB.Repositories.Context
 {
     public class ProjeContext : DbContext
     {
+        public DbSet<Employee> Employees { get; set; }
         public ProjeContext(DbContextOptions<ProjeContext> options) : base(options)
         {
 
