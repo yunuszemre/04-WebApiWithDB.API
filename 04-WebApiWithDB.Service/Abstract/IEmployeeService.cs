@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _04_WebApiWithDB.Repositories.Abstract
+namespace _04_WebApiWithDB.Service.Abstract
 {
-    public interface IEmployeeRepository
+    public interface IEmployeeService
     {
         List<Employee> GetAllEmpleyees();
-        
+
         Task<Employee> GetEmployeeById(int id);
 
         List<Employee> GetEmployeeByDepartment(string department);

@@ -16,15 +16,15 @@ namespace _04_WebApiWithDB.Repositories.Concreate
         {
             _context = context;
         }
-        public List<Employee> GeEmployeeByDepartment(string department)
+        public List<Employee> GetEmployeeByDepartment(string department)
         {
-            
+
             return _context.Employees.Where(t0 => t0.Department == department).ToList();
         }
 
         public List<Employee> GetAllEmpleyees()
         {
-           return _context.Employees.ToList();
+            return _context.Employees.ToList();
         }
 
         public async Task<Employee> GetEmployeeById(int id)
@@ -38,14 +38,16 @@ namespace _04_WebApiWithDB.Repositories.Concreate
             return employee;
         }
 
-        public Employee DeleteEmployee(int id)
+        public void DeleteEmployee(int id)
         {
-            var deletedUser = _context.Employees.FirstOrDefault(t0 => t0.Id == id);
+            Employee deletedUser = _context.Employees.FirstOrDefault(t0 => t0.Id == id);
+
             _context.Remove(deletedUser);
-            return deletedUser;
+            _context.SaveChanges();
+            
         }
 
-        
+
 
         public Employee UpdateEmployee(Employee employee)
         {

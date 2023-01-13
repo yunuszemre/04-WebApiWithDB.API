@@ -17,7 +17,7 @@ namespace _04_WebApiWithDB.Repositories.Context
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("DESKTOP-BODOH2U\\SA; Database=EmployeeDB; uid = sa; pwd = 1234");
+            optionsBuilder.UseSqlServer("Server=DESKTOP-BODOH2U\\SA; Database = EmployeeDB; uid = SA; pwd = 1234");
             base.OnConfiguring(optionsBuilder);
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)

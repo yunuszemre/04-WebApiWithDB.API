@@ -7,4 +7,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\04-WebApiWithDB.Entities\04-WebApiWithDB.Entities.csproj" />
+    <ProjectReference Include="..\04-WebApiWithDB.Repositories\04-WebApiWithDB.Repositories.csproj" />
+  </ItemGroup>
+
 </Project>
