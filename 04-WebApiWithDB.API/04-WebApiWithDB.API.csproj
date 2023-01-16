@@ -21,4 +21,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\04-WebApiWithDB.Service\04-WebApiWithDB.Service.csproj" />
+  </ItemGroup>
+
 </Project>
